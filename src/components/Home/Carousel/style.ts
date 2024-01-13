@@ -27,12 +27,14 @@ export const CarouselComponent = styled.div`
     top: 50%;
     left: 5px;
     z-index: 999;
+    transform: translateY(-50%);
   }
 
   .fwdBtn {
     top: 50%;
     right: 5px;
     z-index: 999;
+    transform: translateY(-50%);
   }
 `;
 
@@ -45,5 +47,6 @@ export const CarouselItem = styled.div`
   min-width: 100%;
   img {
     height: 20rem;
+    object-fit: cover;
   }
 `;
