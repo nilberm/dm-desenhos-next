@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from "react";
-import { CarouselComponent, CarouselItem, CarouselWrapper } from "./style";
+import style from "./style.module.scss";
 import Image from "next/image";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 
@@ -20,22 +21,31 @@ export default function Caroulse({ images }: CaroulseProps) {
   };
 
   return (
-    <CarouselComponent>
-      <CarouselWrapper
+    <div className={style.carousel}>
+      <div
+        className={style.carouselWrapper}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image, index) => (
-          <CarouselItem key={index}>
+          <div className={style.carouselItem} key={index}>
             <Image src={image} alt={`Slide ${index + 1}`} />
-          </CarouselItem>
+          </div>
         ))}
-      </CarouselWrapper>
-      <button className="navButton prevBtn" type="button" onClick={prevSlide}>
+      </div>
+      <button
+        className={[style.navButton, style.prevBtn].join(" ")}
+        type="button"
+        onClick={prevSlide}
+      >
         <MdNavigateBefore />
       </button>
-      <button className="navButton fwdBtn" type="button" onClick={nextSlide}>
+      <button
+        className={[style.navButton, style.fwdBtn].join(" ")}
+        type="button"
+        onClick={nextSlide}
+      >
         <MdNavigateNext />
       </button>
-    </CarouselComponent>
+    </div>
   );
 }

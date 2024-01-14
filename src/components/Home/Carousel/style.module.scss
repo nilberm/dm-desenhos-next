@@ -1,6 +1,4 @@
-import styled from "styled-components";
-
-export const CarouselComponent = styled.div`
+.carousel {
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -36,17 +34,17 @@ export const CarouselComponent = styled.div`
     z-index: 999;
     transform: translateY(-50%);
   }
-`;
+}
 
-export const CarouselWrapper = styled.div`
+.carouselWrapper {
   display: flex;
   transition: transform 0.5s ease;
-`;
+}
 
-export const CarouselItem = styled.div`
+.carouselItem {
   min-width: 100%;
   img {
     height: 20rem;
     object-fit: cover;
   }
-`;
+}

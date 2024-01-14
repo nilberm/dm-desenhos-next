@@ -1,25 +1,23 @@
-"use client";
-
+import style from "./style.module.scss";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
-import { ButtonSocial, FooterComponent, IconsGrid } from "./style";
 
 interface FooterProps {}
 export default function Footer(props: FooterProps) {
   return (
-    <FooterComponent>
-      <IconsGrid>
-        <ButtonSocial>
+    <footer className={style.footer}>
+      <div className={style.iconsGrid}>
+        <button className={style.buttonSocial}>
           <FaFacebook />
-        </ButtonSocial>
+        </button>
 
-        <ButtonSocial>
+        <button className={style.buttonSocial}>
           <FaInstagram />
-        </ButtonSocial>
-        <ButtonSocial>
+        </button>
+        <button className={style.buttonSocial}>
           <FaWhatsapp />
-        </ButtonSocial>
-      </IconsGrid>
+        </button>
+      </div>
       <span>Copyright 2024 © DM Desenhos</span>
-    </FooterComponent>
+    </footer>
   );
 }
